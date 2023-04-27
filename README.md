@@ -1,7 +1,7 @@
 # VH-Mesh
 Berkeley Dataset for VH: https://rll.berkeley.edu/bigbird/access.html
 
-Data Set to CHECK: https://github.com/chenweikai/Body_Reconstruction_References#data-and-code
+Dataset to CHECK: https://github.com/chenweikai/Body_Reconstruction_References#data-and-code
 
 VH Dataset: https://vision.middlebury.edu/stereo/data/ https://vision.middlebury.edu/mview/data/ https://vision.middlebury.edu/stereo/data/scenes2014/
 

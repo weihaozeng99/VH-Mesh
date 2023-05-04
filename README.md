@@ -18,6 +18,7 @@ Dataset of Crane: https://www.dropbox.com/s/rsw55yu3ptm09p0/crane.zip?dl=0
 
 ## Refence
 VH: https://github.com/robin32205/Restore
+    https://github.com/keith2000/VisualHullMesh
 
 3D Bounding Box: https://github.com/varunagrawal/bbox
 

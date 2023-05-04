@@ -23,3 +23,5 @@ VH: https://github.com/robin32205/Restore
 3D Bounding Box: https://github.com/varunagrawal/bbox
 
 VH Matlab: https://github.com/maximm8/VisualHull (Dataset: https://vision.middlebury.edu/mview/data/)
+
+Prespective Metrix: https://github.com/ssloy/tinyrenderer/wiki/Lesson-4:-Perspective-projection

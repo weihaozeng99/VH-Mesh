@@ -25,3 +25,6 @@ VH: https://github.com/robin32205/Restore
 VH Matlab: https://github.com/maximm8/VisualHull (Dataset: https://vision.middlebury.edu/mview/data/)
 
 Prespective Metrix: https://github.com/ssloy/tinyrenderer/wiki/Lesson-4:-Perspective-projection
+
+## Calibration Parameters
+

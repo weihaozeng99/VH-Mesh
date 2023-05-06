@@ -30,9 +30,32 @@ def bounding(addr,caliaddr):
         cv2.destroyAllWindows()
     return ans
 
+def as_num(x):
+    y='{:.10f}'.format(x)
+    return y
+
 def cali(addr):
     allfile=os.walk(addr)
+    Calidata=[]
     for path,dir_list,file_list in allfile:
-        for file_name in file_name:
-            
+        for file_name in file_list:
+            print(os.path.join(path,file_name)+"\n")
+            with open(os.path.join(path,file_name),errors='ignore') as f:
+                k_set=[]
+                #lines=f.readlines(3)
+                for i in range(0,2):
+                    l=f.readline()
+                    l=l.replace("\n","")
+                    k_list=l.split(" ")
+                    k1=as_num(float(k_list[0]))
+                    k2=as_num(float(k_list[1]))
+                    k3=as_num(float(k_list[2]))
+                    k4=as_num(float(k_list[3]))
+                    k_set.append(np.array([k1,k2,k3,k4]))
+                
+
+            Calidata.append(np.array(k1))
+    return Calidata
+
 #bounding("/home/weihao/Downloads/grey_image/grey1/","oo")
+print(cali("/home/weihao/Downloads/calibration/calibration-pmat/"))

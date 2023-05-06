@@ -32,5 +32,7 @@ def bounding(addr,caliaddr):
 
 def cali(addr):
     allfile=os.walk(addr)
-    
+    for path,dir_list,file_list in allfile:
+        for file_name in file_name:
+            
 #bounding("/home/weihao/Downloads/grey_image/grey1/","oo")

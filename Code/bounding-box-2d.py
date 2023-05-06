@@ -6,6 +6,7 @@ def bounding(addr,caliaddr):
     allimg=os.walk(addr)
     imags=[]
     for path,dir_list,file_list in allimg:
+        file_list.sort(reverse=False)
         for file_name in file_list:
             imag=cv2.imread(os.path.join(path,file_name))
             imags.append(np.array(imag))
@@ -38,6 +39,7 @@ def cali(addr):
     allfile=os.walk(addr)
     Calidata=[]
     for path,dir_list,file_list in allfile:
+        file_list.sort(reverse=False)
         for file_name in file_list:
             print(os.path.join(path,file_name)+"\n")
             with open(os.path.join(path,file_name),errors='ignore') as f:
@@ -51,11 +53,14 @@ def cali(addr):
                     k2=as_num(float(k_list[1]))
                     k3=as_num(float(k_list[2]))
                     k4=as_num(float(k_list[3]))
-                    k_set.append(np.array([k1,k2,k3,k4]))
-                
+                    #k_set.append(np.array([k1,k2,k3,k4]))
+                    k_set.append(k1)
+                    k_set.append(k2)
+                    k_set.append(k3)
+                    k_set.append(k4)
 
-            Calidata.append(np.array(k1))
+            Calidata.append(np.array(k_set))
     return Calidata
 
 #bounding("/home/weihao/Downloads/grey_image/grey1/","oo")
-print(cali("/home/weihao/Downloads/calibration/calibration-pmat/"))
+#print(cali("/home/weihao/Downloads/calibration/calibration-pmat/"))

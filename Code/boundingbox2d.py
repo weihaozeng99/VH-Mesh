@@ -63,5 +63,5 @@ def cali(addr):
     return Calidata
 
 #bounding("/home/weihao/Downloads/grey_image/grey1/","oo")
-bounding("/home/weihao/VH-Mesh/asset/TestImag")
+#bounding("/home/weihao/VH-Mesh/asset/TestImag")
 #print(cali("/home/weihao/Downloads/calibration/calibration-pmat/"))

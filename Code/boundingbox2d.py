@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import os
 
-def bounding(addr,caliaddr):
+def bounding(addr):
     allimg=os.walk(addr)
     imags=[]
     for path,dir_list,file_list in allimg:
@@ -26,9 +26,9 @@ def bounding(addr,caliaddr):
         i = cv2.rectangle(i,(x,y),(x+w,y+h),(0,255,0),2)
         print(x,x+w,y,y+h)
         ans.append(np.array([x,x+w,y,y+h]))
-        cv2.imshow("Bounding Rectangle", i)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
+        #cv2.imshow("Bounding Rectangle", i)
+        #cv2.waitKey(0)
+        #cv2.destroyAllWindows()
     return ans
 
 def as_num(x):
@@ -63,4 +63,5 @@ def cali(addr):
     return Calidata
 
 #bounding("/home/weihao/Downloads/grey_image/grey1/","oo")
+bounding("/home/weihao/VH-Mesh/asset/TestImag")
 #print(cali("/home/weihao/Downloads/calibration/calibration-pmat/"))

@@ -22,7 +22,15 @@ def get3dbox(xlim,ylim,zlim,vsize):
     print(pcd)
     print(np.asarray(pcd.points)) 
     os.remove("/home/weihao/VH-Mesh/pointcloud.xyz")
+    octree=o3d.geometry.Octree()
+    octree.convert_from_point_cloud(pcd)
+    #o3d.visualization.draw_geometries([octree])
+    return octree
 
+def getlimits(x, y ,z):
+    ans=[]
+
+    return ans
 
 
 

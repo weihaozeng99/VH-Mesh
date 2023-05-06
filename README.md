@@ -31,3 +31,5 @@ Prespective Metrix: https://github.com/ssloy/tinyrenderer/wiki/Lesson-4:-Perspec
 
 ## Calibration Parameters
 calibration: https://www.dropbox.com/s/v8exckxq1mmhii0/calibration.zip?dl=0
+
+3D_coordinate: https://www.dropbox.com/s/ugamz7l4o33phg9/3D_coordinate.rtf?dl=0

@@ -33,3 +33,6 @@ Prespective Metrix: https://github.com/ssloy/tinyrenderer/wiki/Lesson-4:-Perspec
 calibration: https://www.dropbox.com/s/v8exckxq1mmhii0/calibration.zip?dl=0
 
 3D_coordinate: https://www.dropbox.com/s/ugamz7l4o33phg9/3D_coordinate.rtf?dl=0
+
+## PPT
+https://www.dropbox.com/scl/fi/56rebgapjk1j4cpt2blkl/Final-Project.pptx?dl=0&rlkey=3mo4jow0uxigo2o1p0zjl7wh2

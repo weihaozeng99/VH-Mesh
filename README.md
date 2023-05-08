@@ -27,7 +27,8 @@ VH: https://github.com/robin32205/Restore
 
 VH Matlab: https://github.com/maximm8/VisualHull (Dataset: https://vision.middlebury.edu/mview/data/)
 
-Prespective Metrix: https://github.com/ssloy/tinyrenderer/wiki/Lesson-4:-Perspective-projection
+Prespective Metrix: https://github.com/ssloy/tinyrenderer/wiki/Lesson-4:-Perspective-projection  
+https://github.com/egrigokhan/python-visual-hull
 
 ## Calibration Parameters
 calibration: https://www.dropbox.com/s/v8exckxq1mmhii0/calibration.zip?dl=0

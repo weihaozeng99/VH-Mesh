@@ -5,9 +5,11 @@ import os
 def bounding(addr):
     allimg=os.walk(addr)
     imags=[]
+    imagaddr=[]
     for path,dir_list,file_list in allimg:
         file_list.sort(reverse=False)
         for file_name in file_list:
+            imagaddr.append(np.array(os.path.join(path,file_name)))
             imag=cv2.imread(os.path.join(path,file_name))
             imags.append(np.array(imag))
     #imag=cv2.imread(addr)
@@ -18,7 +20,7 @@ def bounding(addr):
     for i in imags:
         gray = cv2.cvtColor(i, cv2.COLOR_BGR2GRAY)
         ret,thresh = cv2.threshold(gray,127,255,0)
-        contours, _ = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+        #contours, _ = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
         cnt = contours[0]
         x,y,w,h = cv2.boundingRect(cnt)
         #ans=list[x,x+w,y,y+h]
@@ -26,10 +28,10 @@ def bounding(addr):
         i = cv2.rectangle(i,(x,y),(x+w,y+h),(0,255,0),2)
         print(x,x+w,y,y+h)
         ans.append(np.array([x,x+w,y,y+h]))
-        #cv2.imshow("Bounding Rectangle", i)
+        cv2.imshow("Bounding Rectangle", i)
         #cv2.waitKey(0)
         #cv2.destroyAllWindows()
-    return ans
+    return ans,imagaddr
 
 def as_num(x):
     y='{:.10f}'.format(x)

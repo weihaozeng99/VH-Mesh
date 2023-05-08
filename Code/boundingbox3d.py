@@ -1,6 +1,5 @@
 import boundingbox2d as bb
 import numpy as np
-import open3d as o3d
 import os
 
 def get3dbox(xlim,ylim,zlim,vsize):
@@ -22,20 +21,9 @@ def get3dbox(xlim,ylim,zlim,vsize):
     print(pcd)
     print(np.asarray(pcd.points)) 
     os.remove("/home/weihao/VH-Mesh/pointcloud.xyz")
-    octree=o3d.geometry.Octree()
-    octree.convert_from_point_cloud(pcd)
-    #o3d.visualization.draw_geometries([octree])
-    return octree
-
-def getlimits(x, y ,z):
-    ans=[]
-
-    return ans
+   
 
 
 
-xlim=[1,50]
-ylim=[1,50]
-zlim=[1,50]
-vsize=[50,50,50]
-get3dbox(xlim,ylim,zlim,vsize)
+
+

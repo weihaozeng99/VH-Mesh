@@ -20,7 +20,7 @@ def bounding(addr):
     for i in imags:
         gray = cv2.cvtColor(i, cv2.COLOR_BGR2GRAY)
         ret,thresh = cv2.threshold(gray,127,255,0)
-        #contours, _ = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+        contours, _ = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
         cnt = contours[0]
         x,y,w,h = cv2.boundingRect(cnt)
         #ans=list[x,x+w,y,y+h]
@@ -28,7 +28,7 @@ def bounding(addr):
         i = cv2.rectangle(i,(x,y),(x+w,y+h),(0,255,0),2)
         print(x,x+w,y,y+h)
         ans.append(np.array([x,x+w,y,y+h]))
-        cv2.imshow("Bounding Rectangle", i)
+        #cv2.imshow("Bounding Rectangle", i)
         #cv2.waitKey(0)
         #cv2.destroyAllWindows()
     return ans,imagaddr
@@ -47,19 +47,17 @@ def cali(addr):
             with open(os.path.join(path,file_name),errors='ignore') as f:
                 k_set=[]
                 #lines=f.readlines(3)
-                for i in range(0,2):
+                for i in range(0,3):
                     l=f.readline()
                     l=l.replace("\n","")
                     k_list=l.split(" ")
-                    k1=as_num(float(k_list[0]))
-                    k2=as_num(float(k_list[1]))
-                    k3=as_num(float(k_list[2]))
-                    k4=as_num(float(k_list[3]))
+                    k1=float(as_num(float(k_list[0])))
+                    k2=float(as_num(float(k_list[1])))
+                    k3=float(as_num(float(k_list[2])))
+                    k4=float(as_num(float(k_list[3])))
                     #k_set.append(np.array([k1,k2,k3,k4]))
-                    k_set.append(k1)
-                    k_set.append(k2)
-                    k_set.append(k3)
-                    k_set.append(k4)
+                    k_set.append(np.array([k1,k2,k3,k4]))
+            
 
             Calidata.append(np.array(k_set))
     return Calidata

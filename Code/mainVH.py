@@ -13,10 +13,11 @@ imagaddr="/home/weihao/VH-Mesh/asset/TestImag"
 Noues,imags=bb.bounding(imagaddr)
 NumberofImag=1
 #NumberofImag=int(input("Input number of imags of each camara"))
-TestCube=[[-3,2,1],[2,3,3]]
+TestCube=[[-1.5,1.5,1],[1.5,3,3]]
 #TestCube.append(np.array([[-3,2,1],[2,3,3]]))
-points=VH.ComputeVH(TestCube,NumberofImag,Pmats,imags,5)
+points=[]
+VH.ComputeVH(TestCube,NumberofImag,Pmats,imags,2,points)
 maxV=np.max(points)
 isoV=maxV-np.round((maxV/100)*5)-0.5
-v,t=mcubes.marching_cubes(points,isoV)
+v,t=mcubes.marching_cubes(np.array(points),isoV)
 mcubes.export_obj(v, t, '/home/weihao/VH-Mesh/test/VH.obj')

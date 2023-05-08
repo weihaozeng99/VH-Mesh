@@ -140,19 +140,23 @@ def SpiltSpace(CubeP):
 
 
     
-def ComputeVH(CubeP,NumberofImag,Pmats,imagaddrset,Max) :
-    ans=[]
-    if Max<0:
-        return
+def ComputeVH(CubeP,NumberofImag,Pmats,imagaddrset,Max,ans) :
+    #ans=[]
+    if Max<=0:
+        final=TwoPtoEightP(CubeP)
+        ans.append(np.array(final))
+        return ans
     flag=isInside_allImag(Pmats,imagaddrset,NumberofImag,CubeP)
     if flag==0:#on
         space=SpiltSpace(CubeP)
         for cube in space:
-            ans.append(np.array(ComputeVH(cube,NumberofImag,Pmats,imagaddrset,Max-1)))
+            ComputeVH(cube,NumberofImag,Pmats,imagaddrset,Max-1,ans)
+            #ans.append(np.array(temp))
     elif flag==-1:#outside disgard
         return
     else:
-        ans.append(np.array(CubeP))
+        final=TwoPtoEightP(CubeP)
+        ans.append(np.array(final))
         return ans
         
 

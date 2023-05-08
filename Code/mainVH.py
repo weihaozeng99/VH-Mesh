@@ -16,7 +16,7 @@ NumberofImag=1
 TestCube=[[-1.5,1.5,1],[1.5,3,3]]
 #TestCube.append(np.array([[-3,2,1],[2,3,3]]))
 points=[]
-VH.ComputeVH(TestCube,NumberofImag,Pmats,imags,2,points)
+VH.ComputeVH(TestCube,NumberofImag,Pmats,imags,4,points)
 maxV=np.max(points)
 isoV=maxV-np.round((maxV/100)*5)-0.5
 v,t=mcubes.marching_cubes(np.array(points),isoV)

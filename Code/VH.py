@@ -142,7 +142,7 @@ def SpiltSpace(CubeP):
     
 def ComputeVH(CubeP,NumberofImag,Pmats,imagaddrset,Max,ans) :
     #ans=[]
-    if Max<=0:
+    if Max<0:
         final=TwoPtoEightP(CubeP)
         ans.append(np.array(final))
         return ans

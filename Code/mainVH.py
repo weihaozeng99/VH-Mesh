@@ -6,10 +6,10 @@ import boundingbox3d as bbb
 import ReadPmat as R
 
 #caliaddr=input("Input the path of the calibration parameters")
-caliaddr="/home/weihao/Downloads/Test/cali_P/templeSR_par.txt"
+caliaddr="/home/weihao/Downloads/Test/cali_P/templeRing/templeR_par.txt"
 Pmats=R.ReadPmat(caliaddr)
 #imagaddr=input("Input the path of the imags")
-imagaddr="/home/weihao/Downloads/Test/templeSparseRing/"
+imagaddr="/home/weihao/Downloads/Test/templeRing/"
 
 Noues,imags=bb.bounding(imagaddr)
 NumberofImag=1
@@ -20,5 +20,5 @@ points=[]
 VH.ComputeVH(TestCube,NumberofImag,Pmats,imags,3,points)
 maxV=np.max(points)
 isoV=maxV-np.round((maxV/100)*5)-0.5
-v,t=mcubes.marching_cubes(np.array(points),0.1)
+v,t=mcubes.marching_cubes(np.array(points),44)
 mcubes.export_obj(v, t, '/home/weihao/VH-Mesh/test/VH.obj')
